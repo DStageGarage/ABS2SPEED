@@ -16,8 +16,7 @@ You should now be able to compile the program but not yet to upload it.
 ## Upload
 MiniCore boards use a different bootloader than the stabdard Arduino Nano. However, most Nano V3 boards based on ATMega328PB on the market will have a standard Nano bootloader and will be recognized in Arduino as ATMega328P. Since Arduino IDE doesn't allow to compile the program with setting it for one board and then just upload it using a different setting this poses a problem.
 
-IMPORTANT
-The following instruction assume that your Nano has a standard bootloader. You can confirm it by compiling and uploading simple "Blink" example from Arduino IDE to your board. Just set your IDE to standard Nano board, go to "File->Examples->01.Basics->Blink" and then "Sketch->Upload". If your board has a non standard botloader and this process fails then it's out of the scope of this document.
+**IMPORTANT** The following instruction assume that your Nano has a standard bootloader. You can confirm it by compiling and uploading simple "Blink" example from Arduino IDE to your board. Just set your IDE to standard Nano board, go to "File->Examples->01.Basics->Blink" and then "Sketch->Upload". If your board has a non standard botloader and this process fails then it's out of the scope of this document.
 
 There are few ways to go around the above problem but this one seems to me like the easiest:
 1. Go to the following path on your PC: "C:\Users\"HERE YOUR USER NAME"\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.2". The path may differ if your Arduino IDE is installed in a non standard way or your MiniCore library is of different version (different numbers in the name of the last folder in this path).
