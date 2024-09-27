@@ -93,6 +93,18 @@ Factor can be determined experimentally but also precalculated. Here's an exampl
 
    If the limiting frequency (end of the scale) is not known it an be determined experimentally. Set the "MID_STAGING_DELAY" to a relatively large value such as "7000" (7s delay) so the needle stays in the top position long enough to spot it. Then modify the        "MAX_SPEEDO_FREQ" parameter and reset or power down-up the circuit to see the effect untill the correct value is found.
 
-## Ordering of HW
+## HW ordering and assembly
 ABS2SPEED PCB can be ordered preassembled from JLCPCB. You will need 3 files: gerbers, BOM and CPL (Pick'nPlase) and just follow the proces on JLCPCB website. In case of issues please contact me on dstagegarage@gmail.com. 
-Please note that by default the throughole parts are not included in the Bill of Materials (BOM) and have to be purchased and soldered manually by the user. This includes: screw terminals, dip-swith or jumpers header, header for "MODE" jumper, female headers for Arduino Nano (optionaly can be soldered directly to the board), the Arduino Nano V3 module (has to be based on ATMega328PB, NOT ATMega328P!).
+
+Please note that by default the throughole parts are not included in the Bill of Materials (BOM) and have to be purchased and soldered manually by the user. This includes: 
+- 4 pieces of double 5mm screw terminals,
+- 10 position 2.54mm dip-swith or 2x10 2.54mm jumper header (goldpin),
+- 2x3 2.54mm header for "MODE" jumper (goldpin),
+- 2 pieces of 1x15 female 2.54mm headers for Arduino Nano (optionaly can be soldered directly to the board),
+- Arduino Nano V3 module (has to be based on ATMega328PB, NOT ATMega328P!).
+
+## Programming Arduino module
+Please follow the instructions in SW folder.
+
+## Casing
+The model and STL file for a 3D printed case will be available soon.
