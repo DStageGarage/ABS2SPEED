@@ -51,7 +51,7 @@ The input of the speedometer (or tachometer) is to be connected to the "OUT" ter
 This should work with most gauges but please note that some may require removal of the "R22" pull-up.
 The output pulses are indicated by D5 LED as well as the LED on Arduino Nano module.
 
-#Frequency recalculation factor
+## Frequency recalculation factor
 By default the recalculation factor is set by the 10 position swith "S1" (or jumpers used in its place). The factor can range from 0.01 up to 10.23. 
 Each position of the switch has a signed factorial weight and the weights are added together to form the final factor. Starting from most right:
   - position 1 - 5.12
