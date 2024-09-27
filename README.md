@@ -12,37 +12,38 @@ The circuit is based on Arduino Nano V3 equupiped with ATMega328PB microcontroll
 
 ## Input
 ABS2SPEED should work with various input types. Here are tips for setting the input up:
-  1. 3-wire Hall effect sensor
-     - sensor with separate power and sigbal output,
-     - sometimes used as impulsators in gearboxes,
-     - connect signal to "HA" input and ground to "GND"
-     - you can power the 5V sensor with the "5V" output,
-     - if the outpurt is open-collector type (requires pull-up) set the "MODE" jumper in "PU" position,
-     - usually the output square wave will have the low level close to 0V and high level close to 5V,
-       setting the potentiometer "PR1" to about 2.5V should work fine (middle postition, can be measured at the test point "TP1").
-  2. 2-wire Hall effect sensor
-     - sensor whith indirect power mixed with output signal,
-     - used as ABS sensors on vehicles with a magnetic path or magnetic ring on the wheel hub (for example Fiat Seicento, BMWs),
-     - connect the signal/ground wire to "HA",
-     - power the sensor with the "10V" output,
-     - set the "MODE" jumper in "PD" position to enable indirect power
-     - the range of the output square wave can vary,
-       as a ball park set the potentiometer "PR1" to about 2.5V (middle postition, can be measured at the test point "TP1").
-  3. VR sensor
-     - variable reluctance sensor, 
-     - used as ABS sensors on vehicles with a metal crown wheel on the wheel hub,
-     - connect one sensor wire to "VR+" input and the other to "GND",
-       sensor is not polarized so usually it won't matter which wire goes where,
-     - set the "MODE" jumper in "VR",
-     - the amplitude of the output sine whave is frequency (vehicle speed) depependant,
-       therefore it is usually best to look for the zero crossing of the signa by setting the potentiometer "PR1" to about 0V (all the way left, can be measured at the test point "TP1").
-  4. Direct square wave signal
-     - for example for use with speed or tacho signal directly from ECU or other unit, 
-     - connect the signal to "HA" input and ground to "GND",
-     - connect one sensor wire to "VR" input and the other to "GND",
-     - if sigal is open-collector type (requires pull-up) set the "MODE" jumper in "PU" position,
-     - set the potentiometer "PR1" around the mid point of the signal (can be measured at the test point "TP1"),
-       in usual cases that's either 2.5V (5V signal) or 5V (12V signal like when pull-up is in use).
+   ### 1. 3-wire Hall effect sensor
+   - sensor with separate power and sigbal output,
+   - sometimes used as impulsators in gearboxes,
+   - connect signal to "HA" input and ground to "GND"
+   - you can power the 5V sensor with the "5V" output,
+   - if the outpurt is open-collector type (requires pull-up) set the "MODE" jumper in "PU" position,
+   - usually the output square wave will have the low level close to 0V and high level close to 5V,
+     setting the potentiometer "PR1" to about 2.5V should work fine (middle postition, can be measured at the test point "TP1").
+   ### 2. 2-wire Hall effect sensor
+   - sensor whith indirect power mixed with output signal,
+   - used as ABS sensors on vehicles with a magnetic path or magnetic ring on the wheel hub (for example Fiat Seicento, BMWs),
+   - connect the signal/ground wire to "HA",
+   - power the sensor with the "10V" output,
+   - set the "MODE" jumper in "PD" position to enable indirect power
+   - the range of the output square wave can vary,
+     as a ball park set the potentiometer "PR1" to about 2.5V (middle postition, can be measured at the test point "TP1").
+     setting the potentiometer "PR1" to about 2.5V should work fine (middle postition, can be measured at the test point "TP1").
+   ### 3. VR sensor
+   - variable reluctance sensor, 
+   - used as ABS sensors on vehicles with a metal crown wheel on the wheel hub,
+   - connect one sensor wire to "VR+" input and the other to "GND",
+     sensor is not polarized so usually it won't matter which wire goes where,
+   - set the "MODE" jumper in "VR",
+   - the amplitude of the output sine whave is frequency (vehicle speed) depependant,
+     therefore it is usually best to look for the zero crossing of the signa by setting the potentiometer "PR1" to about 0V (all the way left, can be measured at the test point "TP1").
+   ### 4. Direct square wave signal
+   - for example for use with speed or tacho signal directly from ECU or other unit, 
+   - connect the signal to "HA" input and ground to "GND",
+   - connect one sensor wire to "VR" input and the other to "GND",
+   - if sigal is open-collector type (requires pull-up) set the "MODE" jumper in "PU" position,
+   - set the potentiometer "PR1" around the mid point of the signal (can be measured at the test point "TP1"),
+     in usual cases that's either 2.5V (5V signal) or 5V (12V signal like when pull-up is in use).
 
 When input is setup correctly pulses from the sensor will be indicated by "D4" LED.
 
@@ -80,14 +81,18 @@ Factor can be determined experimentally but also precalculated. Here's an exampl
   - recalculation factor needs to be 808Hz / 525Hz = 1.54
 
 ## Aditional functions and settings
-1. Speedometer limit
+### Speedometer limit
    If the vehicle speed can go higher than speedometer scale some of the speedometers can experience problems such as moving the needle all the way down to 0, some erratic behaviour or other unwanted effects.
    For such cases user can set the speedo limmiting frequency in the program. For that the parameter "USE_SPEEDO_LIMIT" has to be set to "1". The limitation is set by "MAX_SPEEDO_FREQ" parameter.
    If you don't know the limit frequency it can be determined experimentally with a help of the second special function - see point 2.
 
-2. Staging
+### Staging
    The "Staging" sometimes called "Openning ceremony" is the gadget function that will move the needle all the way up the scale and then down to 0 when vehicle is started.
    To enable this option please set "USE_STAGING" parameter to "1". It is imortant to also set the "MAX_SPEEDO_FREQ" correctly so the needle hits end of the scale acurately.
    For pleasing aestetic effect the delay parameters "PRE_STAGING_DELAY", "MID_STAGING_DELAY" and "POST_STAGING_DELAY" should be tweaked.
 
    If the limiting frequency (end of the scale) is not known it an be determined experimentally. Set the "MID_STAGING_DELAY" to a relatively large value such as "7000" (7s delay) so the needle stays in the top position long enough to spot it. Then modify the        "MAX_SPEEDO_FREQ" parameter and reset or power down-up the circuit to see the effect untill the correct value is found.
+
+## Ordering of HW
+ABS2SPEED PCB can be ordered preassembled from JLCPCB. You will need 3 files: gerbers, BOM and CPL (Pick'nPlase) and just follow the proces on JLCPCB website. In case of issues please contact me on dstagegarage@gmail.com. 
+Please note that by default the throughole parts are not included in the Bill of Materials (BOM) and have to be purchased and soldered manually by the user. This includes: screw terminals, dip-swith or jumpers header, header for "MODE" jumper, female headers for Arduino Nano (optionaly can be soldered directly to the board), the Arduino Nano V3 module (has to be based on ATMega328PB, NOT ATMega328P!).
