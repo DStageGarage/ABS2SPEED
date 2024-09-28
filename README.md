@@ -108,7 +108,7 @@ Please note that by default the throughole parts are not included in the Bill of
 ![Prototype](A2S_v3.1/DStage_A2S_v3.0_proto2.jpg)
 
 ## Programming Arduino module
-Please follow the instructions in SW/README.md.
+Please follow the instructions in [SW/Readme.md](https://github.com/DStageGarage/ABS2SPEED/tree/main/SW/Readme.md).
 
 ## Casing
 The model and STL file for a 3D printed case will be available soon.
