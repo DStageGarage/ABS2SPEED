@@ -10,6 +10,8 @@ It is a simple electronic circuit that allows to control the vehicle speedometer
 IMPORTANT!
 The circuit is based on Arduino Nano V3 equupiped with ATMega328PB microcontroller. It will NOT WORK with modules populated with ATMega328P!
 
+![Prototype](A2S_v3.1/DStage_A2S_v3.0_proto1.jpg)
+
 ## Input
 ABS2SPEED should work with various input types. Here are tips for setting the input up:
    ### 1. 3-wire Hall effect sensor
@@ -101,10 +103,12 @@ Please note that by default the throughole parts are not included in the Bill of
 - 10 position 2.54mm dip-swith or 2x10 2.54mm jumper header (goldpin),
 - 2x3 2.54mm header for "MODE" jumper (goldpin),
 - 2 pieces of 1x15 female 2.54mm headers for Arduino Nano (optionaly can be soldered directly to the board),
-- Arduino Nano V3 module (has to be based on ATMega328PB, NOT ATMega328P!).
+- Arduino Nano V3 module (has to be based on ATMega328**PB**, NOT ~~ATMega328P~~).
+
+![Prototype](A2S_v3.1/DStage_A2S_v3.0_proto2.jpg)
 
 ## Programming Arduino module
-Please follow the instructions in SW folder.
+Please follow the instructions in SW/README.md.
 
 ## Casing
 The model and STL file for a 3D printed case will be available soon.
