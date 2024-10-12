@@ -111,4 +111,4 @@ Please note that by default the throughole parts are not included in the Bill of
 Please follow the instructions in [SW/Readme.md](https://github.com/DStageGarage/ABS2SPEED/tree/main/SW/Readme.md).
 
 ## Casing
-The model and STL file for a 3D printed case will be available soon.
+The model and STL file for a 3D printed case will be available on request or when I have time ;-).
