@@ -1,4 +1,6 @@
 # ABS2SPEED Arduino SW
+## History
+- v0.5 2024.10.10 - small corrections for glitches when VSS is disconnected (abnormal situation), probably a bit safer also for very low speeds / 0km/h; small correction for staging feature.
 ## Compilation
 Arduino IDE does not provide an option for just uploading the SW to the board. The "Upload" option always compiles the program before uploading it. Therefore even if you don't need to modify any parameters in the program you still have to be able to compile it. Well, unless you know your way around AVR microcontrollers well enough to think that you could programm hex file outside of Arduino IDE... but it also means the following instructions are not a problem for you ;-)
 
